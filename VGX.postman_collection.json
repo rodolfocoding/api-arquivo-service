@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "80d96a1e-a5dc-4a48-bc0d-ef2832818b9e",
+		"name": "VGX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26914738"
+	},
+	"item": [
+		{
+			"name": "Criar arquivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fileName\": \"ARQUIVO_TESTE_220823.csv\", \r\n    \"origin\": \"C:/users/rodolfo/download\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3333/arquivos"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os arquivos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3333/arquivos"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar arquivo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/arquivos?id=13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"arquivos"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/rodol/Downloads/ARQUIVO_TESTE_220823.csv"
+						}
+					]
+				},
+				"url": "http://localhost:3333/arquivos/upload"
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar linha",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"column01\": \"oi\",\r\n    \"column03\": \"oi\",\r\n    \"column04\": \"oi\",\r\n    \"column05\": \"oi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3333/linhas/64e8d4aa70f15a0add7707ed"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todas as linhas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar linha",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
